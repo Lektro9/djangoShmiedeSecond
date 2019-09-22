@@ -1,4 +1,4 @@
-I use this for creating my website with jenkins.
+I use this for creating builds of my website with jenkins.
 
 # How to install
 sudo apt-get install python3-pip <br>
