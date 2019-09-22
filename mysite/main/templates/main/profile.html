@@ -1,0 +1,40 @@
+{% extends "main/header.html" %}
+
+
+
+{% block body %}
+{% load static %}
+<style>
+		@media screen and (min-width: 600px) 
+		{
+		  .bd-example 
+		  {
+		    width: 400px;
+		    margin: auto;
+  		  }
+		}
+</style>
+
+	<div style="background:transparent !important" class="jumbotron">
+	  <h1 class="display-4">Profil von {{aktUser}}</h1>
+	  <hr class="my-4">
+				<h5>Deine Beiträge:</h5>
+				{% if allMyThemen %}
+					{% for thema in allMyThemen %}
+							<a href="/{{thema.link}}"><div class="shadow p-3 mb-2 bg-white rounded"><h4 class="display-5">{{thema.name}}</h4>
+						    {{thema.thema_fach}}
+							{{thema.datum|date:'d.m.Y H:i'}}
+						    </div></a>
+					{% endfor %}
+				{% else %}
+				<p>Erstelle <a href="/erstellen/">hier</a> deinen ersten Beitrag!</p>
+				{% endif %}
+	</div>
+
+	<!-- 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 -->
+
+    
+
+{% endblock %}

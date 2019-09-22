@@ -1,0 +1,72 @@
+{% extends "main/header.html" %}
+
+
+{% block body %}
+{% load index %}
+
+<div class="container-fluid">
+
+	<div class="row">
+	  <div class="col-lg-10 col-md-12">
+
+
+		<div style="background:transparent !important" class="jumbotron">
+		  <p class="lead">Suche dir ein Thema aus.</p>
+				
+				  <div class="row">
+				  	{% for t in themen %}
+				  		{% if t.is_published == "nein" %}
+				  		{{ kC.0 }}
+						{% else %}
+					<div class="col-sm">
+							
+							<div class="card mt-3" style="width: 18rem;">
+							  <div class="card-body">
+								<h5 class="card-title">{{t.name}} </h5>
+								<p class="card-text"></p>
+								<a href="{{t.link}}" class="btn btn-secondary">Zum Thema</a><br>
+								{% if kartenCount|index:forloop.counter0 != 0 %}
+								<a href="{{t.link}}/karten" class="btn btn-sm btn-secondary mt-3">Karten (Anzahl: {{kartenCount|index:forloop.counter0}})</a> 
+								{% else %}
+								Leider gibt es noch keine Karten, klicke <a href="/karten-erstellen/">hier</a> um welche zu erstellen.
+								{% endif %}
+							  </div>
+							  
+							   <!-- <div class="card-footer"><a href="{{t.link}}/karten" class="btn btn-sm btn-secondary">Zu den Karten</a> (Anzahl: {{kartenCount|index:forloop.counter0}}) -->
+							  
+							  
+							  
+							</div>
+							
+					</div>
+						{% endif %}
+					{% endfor %}
+				  </div>
+				
+
+		</div>
+	  </div>
+
+	  <div class="col-2">
+
+		<nav class="nav flex-column">
+			<strong>Themen:</strong>
+			{% for t in themen %}
+				{% if t.is_published == "nein" %}
+				{% else %}
+			  <a class="nav-link" href="{{t.link}}">{{t.name}}</a>
+			  	{% endif %}
+			{% endfor %}
+		</nav>
+
+	   </div>
+	</div>
+
+</div>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
+
+    
+
+{% endblock %}

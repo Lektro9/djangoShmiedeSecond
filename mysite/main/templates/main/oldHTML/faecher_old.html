@@ -1,0 +1,41 @@
+{% extends "main/header.html" %}
+
+
+{% block body %}
+{% load static %}
+
+	<div style="background:transparent !important" class="jumbotron">
+	  <h1 class="display-4">Shmiede</h1>
+	  <p class="lead">Willkommen auf der Webseite SHMIEDE, sie ist in erster Linie zum Lernen gedacht.</p>
+	  <hr class="my-4">
+	  <p>Such dir unten ein Fach aus zum Lernen. Wenn etwas kaputt ist oder nicht funktioniert, einfach kurz in Whatsapp Bescheid geben.</p>
+			<div class="container-fluid">
+			  <div class="row">
+			  	{% for f in faecher %}
+				<div class="col-sm col-lg">
+						
+						<div class="card" style="width: 18rem;">
+						  <a href="{{f.link}}"><img class="card-img-top" src="/static/{{f.name}}.jpg" alt="{{f.name}}"></a>
+						  <div class="card-body">
+							<h5 class="card-title">{{f.name}}</h5>
+							<p class="card-text">
+													<p>{{f.beschreibung}}</p>
+												</p>
+							<a href="{{f.link}}" class="btn btn-primary">Zum Fach</a>
+						  </div>
+						</div>
+						
+						
+				</div>
+				{% endfor %}
+			  </div>
+			</div>
+
+	</div>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
+
+    
+
+{% endblock %}

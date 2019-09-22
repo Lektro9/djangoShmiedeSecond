@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title>Tic Tac Toe</title>
+	<!-- <link rel="stylesheet" type="text/css" href="css/ttt.css"> -->
+	<link href="{% static 'css/ttt.css' %}" rel="stylesheet">
+</head>
+<body>
+	<h2>Welcome</h2>
+
+	<table>
+		<tr>
+			<td class="cell" id="0"></td>
+			<td class="cell" id="1"></td>
+			<td class="cell" id="2"></td>
+		</tr>
+		<tr>
+			<td class="cell" id="3"></td>
+			<td class="cell" id="4"></td>
+			<td class="cell" id="5"></td>
+		</tr>		
+		<tr>
+			<td class="cell" id="6"></td>
+			<td class="cell" id="7"></td>
+			<td class="cell" id="8"></td>
+		</tr>
+	</table>
+
+	<div class="endgame">
+		<div class="text">Game Over</div>
+	</div>
+
+	<button onClick="startGame()">Replay</button>
+
+	<!-- <script src="js/ttt.js"></script> -->
+	<script src="{% static 'js/ttt.js' %}"></script>
+</body>
+</html>

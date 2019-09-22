@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+{% load static %}
+
+	
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<link href="{% static 'css/bootstrap_button.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+	<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+	<script src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.js'></script>
+	<link href="{% static 'css/flashstyle.css' %}" rel="stylesheet">
+
+</head>
+
+<header>
+</header>
+
+<body>
+  <div class="container">
+  
+  <h1> {{current_thema.name}} </h1>
+  <h2>{{current_thema.thema_fach}}</h2>
+  
+  <dl>
+  {% for t in Kartei %}
+      {% if t.is_published == "nein" %}
+      {% else %}
+        <card>
+          <dt>
+    			{{t.frage|safe}}
+    	  </dt>
+          <dd>
+    			{{t.antwort|safe}}
+    	  </dd>
+        </card>
+      {% endif %}
+   	{% endfor %}
+  </dl>
+  
+   </div>
+   
+   <!--  <div  class="mx-auto" style="width: 200px;"><a href="/{{ zurueck }}"><button type="button" class="btn btn-primary" >Zurück</button></a></div> -->
+   <button type="button" class="btn btn-primary" onClick="goBack()" >Zurück</button>
+   <a href="umgekehrt"><button type="button" class="btn btn-primary" >umkehren</button></a>
+
+<script  src="{% static 'js/index.js' %}"></script>
+<script>
+function goBack() {
+  window.history.back();
+}
+</script>
+</body>
+
+
+</html>

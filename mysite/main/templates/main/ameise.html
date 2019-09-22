@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+<head>
+	<title></title>
+<link href="{% static 'css/ameise.css' %}" rel="stylesheet">
+</head>
+<body>
+
+<p>
+	<div id="canvases">
+		<canvas id="myCanvas" width="900" height="700"></canvas>
+		<canvas id="myCanvas2" width="900" height="700"></canvas>
+	</div>
+</p>
+
+<p><button onclick="update()">Try it</button></p>
+<p>test</p>
+
+<img id="ant" width="20" height="20"
+src="{% static 'images/ant.png' %}">
+
+<img id="food" width="40" height="40"
+src="{% static 'images/food.png' %}">
+
+<img id="home" width="80" height="80"
+src="{% static 'images/home.png' %}">
+
+<script src="{% static 'js/ameise.js' %}"></script>
+</body>
+</html>

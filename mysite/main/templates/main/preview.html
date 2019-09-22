@@ -1,0 +1,51 @@
+{% extends "main/header.html" %}
+
+
+{% block body %}
+{% load static %}
+<div class="container-fluid">
+
+	<div class="row">
+	  <div class="col-lg-10 col-md-12">
+
+	  		<!-- {% for t in new_thema %} -->
+	  		{% if new_thema.is_published == "nein" %}
+	  		<h2>Thema noch nicht freigeschaltet!</h2>
+			{% else %}
+	  			<h2>{{new_thema.name}}</h2>
+	  			<hr />
+	  			{{new_thema.inhalt|safe}}
+
+	  			<!-- {% if KarteiK|length != 0 %}
+	  				<p>Für die Karten(Anzahl: <strong>{{ KarteiK|length }}</strong>) zu diesem Thema, klicke <a href="{{t.link}}/karten">hier</a></p>
+	  			{% endif %} -->
+	  	<hr style="border-top: 3px double #8c8b8b;" />
+	  	<p> Das Thema wurde erstellt von <strong>{{ new_thema.author }}</strong> am <strong>{{ new_thema.datum }}</strong>
+
+	  		{% endif %}
+	  		<!-- {% endfor %} -->
+	  </div>
+
+<!-- 	  <div class="col-lg-2">
+
+		<nav class="nav flex-column">
+			<strong>Themen:</strong>
+			{% for t in themen %}
+				{% if t.is_published == "nein" %}
+				{% else %}
+					{% for ct in thema %}
+						{% if t.link == ct.link %}
+						<a class="nav-link disabled" href="{{t.link}}">{{t.name}}</a>
+						{% else %}
+					  	<a class="nav-link" href="{{t.link}}">{{t.name}}</a>
+					  	{% endif %}
+					{% endfor %}
+				{% endif %}
+			{% endfor %}
+		</nav>
+
+	   </div> -->
+	</div>
+
+</div>
+{% endblock %}

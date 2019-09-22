@@ -1,0 +1,77 @@
+{% extends "main/header.html" %}
+
+
+{% block body %}
+
+	<div style="background:transparent !important" class="jumbotron">
+	  <h1 class="display-4">Shmiede</h1>
+	  <p class="lead">Willkommen auf der Webseite SHMIEDE, sie ist in erster Linie zum Lernen gedacht.</p>
+	  <hr class="my-4">
+	  <p>Such dir unten ein Fach aus zum Lernen. Wenn etwas kaputt ist oder nicht funktioniert, einfach kurz in Whatsapp Bescheid geben.</p>
+			<div class="container-fluid">
+			  <div class="row">
+			  	{% for th in themen %}
+				<div class="col-sm">
+						
+						<div class="card" style="width: 18rem;">
+						  <a href="/ITS"><img class="card-img-top" src="" alt="ITS"></a>
+						  <div class="card-body">
+							<h5 class="card-title">ITS</h5>
+							<p class="card-text">
+													<p>{{th.name}}</p>
+													<p>{{th.inhalt|safe}}</p>
+													<p>{{th.datum}}</p>
+												</p>
+							<a href="/ITS" class="btn btn-primary">Zum Thema</a>
+						  </div>
+						</div>
+						
+						
+				</div>
+				{% endfor %}
+				<div class="col-sm">
+				
+						<div class="card" style="width: 18rem;">
+						  <a href="/AWE"><img class="card-img-top" src="" alt="AWE"></a>
+						  <div class="card-body">
+							<h5 class="card-title">AWE</h5>
+							<p class="card-text"></p>
+							<a href="/AWE" class="btn btn-primary">Zum Thema</a>
+						  </div>
+						</div>
+						
+				</div>
+				<div class="col-sm">
+						<div class="card" style="width: 18rem;">
+						  <a href="/Englisch"><img class="card-img-top" src="" alt="English"></a>
+						  <div class="card-body">
+							<h5 class="card-title">Englisch</h5>
+							<p class="card-text">Hier sind Infos rund zum Fach Englisch<p>
+							<a href="/Englisch" class="btn btn-primary">Zum Thema</a>
+						  </div>
+						</div>
+				</div>
+				<div class="col-sm">
+						<div class="card" style="width: 18rem;">
+						  <a href="/WGP"><img class="card-img-top" src="" alt="English"></a>
+						  <div class="card-body">
+							<h5 class="card-title">WGP</h5>
+							<p class="card-text">Hier sind Infos rund zum Fach WGP<p>
+							<a href="/WGP" class="btn btn-primary">Zum Thema</a>
+						  </div>
+						</div>
+				</div>
+				<div class="col-sm">
+				  <!-- Hier kommt eine neue Karte rein -->
+				</div>				
+			  </div>
+			</div>
+
+	</div>
+	<!--
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	-->
+
+    
+
+{% endblock %}

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bus und Zeit</title>
+      <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+</head>
+
+<header>
+    <nav>
+        <div class="nav-wrapper">
+            <div class="brand-logo">Busverbindungen</div>
+        </div>
+    </nav>
+</header>
+
+<body>
+
+
+    
+<!--         <p>{{bus_info_erich}}</p>
+        <p>{{bus_info_hymmen}}</p>
+        <p>{{bus_info_huegel}}</p> -->
+  <p class="flow-text"> Zeit: {{ time_now }} </p>
+    <div class="striped container">
+      <p class="flow-text"><b>{{bus_info_erich.events.0.stopPoint.name}}</b></p>
+      <table>
+        <thead>
+          <tr>
+              <th class="flow-text"><b>Abfahrtzeit</b></th>
+              <th class="flow-text"><b>Abfahrt in</b></th>
+              <th class="flow-text"><b>Buslinie/Richtung</b></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for info in bus_info_erich.events %}
+          <tr>
+            <td>{{ info.departure.estimate }} ({{ info.departure.timetable }})</td>
+            <td>{{ info.departure.comes_in }} min</td>
+            <td><i class="material-icons">directions_bus</i> {{ info.line.number }} {{ info.line.direction }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+      <p class="flow-text"><b>{{bus_info_hymmen.events.0.stopPoint.name}}</b></p>
+      <table>
+        <thead>
+          <tr>
+              <th class="flow-text"><b>Abfahrtzeit</b></th>
+              <th class="flow-text"><b>Abfahrt in</b></th>
+              <th class="flow-text"><b>Buslinie/Richtung</b></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for info in bus_info_hymmen.events %}
+          <tr>
+            <td>{{ info.departure.estimate }} ({{ info.departure.timetable }})</td>
+            <td>{{ info.departure.comes_in }} min</td>
+            <td><i class="material-icons">directions_bus</i> {{ info.line.number }} {{ info.line.direction }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+      <p class="flow-text"><b>{{bus_info_huegel.events.0.stopPoint.name}}</b></p>
+      <table>
+        <thead>
+          <tr>
+              <th class="flow-text"><b>Abfahrtzeit</b></th>
+              <th class="flow-text"><b>Abfahrt in</b></th>
+              <th class="flow-text"><b>Buslinie/Richtung</b></th>
+          </tr>
+        </thead>
+
+        <tbody>
+        {% for info in bus_info_huegel.events %}
+          <tr>
+            <td>{{ info.departure.estimate }} ({{ info.departure.timetable }})</td>
+            <td>{{ info.departure.comes_in }} min</td>
+            <td><i class="material-icons">directions_bus</i> {{ info.line.number }} {{ info.line.direction }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+
+    </div>
+{{ msg }}
+</body>
+</html>

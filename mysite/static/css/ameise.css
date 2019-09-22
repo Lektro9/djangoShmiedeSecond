@@ -1,0 +1,28 @@
+#canvases{
+	position: relative;
+	width: 900;
+	height: 700;
+}
+
+#myCanvas{
+	outline: black 3px solid;
+	z-index: 2;
+	position: absolute;
+}
+
+#myCanvas2{
+	z-index: 1;
+	position: relative;
+}
+
+#ant{
+	visibility: hidden;
+}
+
+#food{
+	visibility: hidden;
+}
+
+#home{
+	visibility: hidden;
+}

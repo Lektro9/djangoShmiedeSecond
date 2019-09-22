@@ -1,0 +1,83 @@
+{% extends "main/header.html" %}
+
+
+
+{% block body %}
+{% load static %}
+<style>
+		@media screen and (min-width: 600px) 
+		{
+		  .bd-example 
+		  {
+		    width: 400px;
+		    margin: auto;
+  		  }
+		}
+</style>
+
+	<div style="background:transparent !important" class="jumbotron">
+	  <h1 class="display-4">Shmiede</h1>
+	  <p class="lead">Willkommen auf der Webseite SHMIEDE, die in erster Linie zum Lernen gedacht ist.</p>
+	  <hr class="my-4">
+	  <p class="lead">Such dir unten ein Fach zum Lernen aus. Wenn etwas kaputt ist oder nicht funktioniert, einfach kurz in Whatsapp Bescheid geben.</p>
+
+				<div class="bd-example">
+				  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+				    <ol class="carousel-indicators">
+				      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+				      <li data-target="#carouselExampleCaptions" data-slide-to="3"></li>
+				    </ol>
+				    <div class="carousel-inner">
+				      <div class="carousel-item active">
+				        <a href="/ITS"><img src="/static/ITS.jpg" class="d-block w-100" alt="..."></a>
+				        <div class="carousel-caption d-none d-md-block">
+				        </div>
+				      </div>
+				      <div class="carousel-item">
+				        <a href="/AWE"><img src="/static/AWE.jpg" class="d-block w-100" alt="...">
+				        <div class="carousel-caption d-none d-md-block">
+				        </div>
+				      </div>
+				      <div class="carousel-item">
+				        <a href="/WGP"><img src="/static/WGP.jpg" class="d-block w-100" alt="...">
+				        <div class="carousel-caption d-none d-md-block">
+				        </div>
+				      </div>
+				      <div class="carousel-item">
+				        <a href="/Englisch"><img src="/static/Englisch.jpg" class="d-block w-100" alt="...">
+				        <div class="carousel-caption d-none d-md-block">
+				        </div>
+				      </div>
+				    </div>
+				    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+				      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				      <span class="sr-only">Previous</span>
+				    </a>
+				    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+				      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				      <span class="sr-only">Next</span>
+				    </a>
+				  </div>
+				</div>
+
+				<hr>
+				<h1 class="display-4">Neuste Einträge</h1>
+				{% for thema in neusteThemen %}
+					{% if thema.is_published == "ja" %}
+						<a href="{{thema.link}}"><div class="shadow p-3 mb-5 bg-white rounded"><h4 class="display-5">{{thema.name}}</h4>
+					    {{thema.thema_fach}}
+						{{thema.datum|date:'d.m.Y H:i'}}
+					    </div></a>
+			    	{% endif %}
+				{% endfor %}
+
+	</div>
+	<!-- 
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	 -->
+
+    
+
+{% endblock %}

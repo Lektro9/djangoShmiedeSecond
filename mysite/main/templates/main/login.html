@@ -1,0 +1,18 @@
+{% extends "main/header.html" %}
+
+{% load crispy_forms_tags %}
+
+{% block body %}
+
+<form method="POST">
+	{% csrf_token %}
+	{{form|crispy}}
+
+	<button type="submit" class="btn btn-primary">Login</button>
+</form>
+
+Wenn du noch keinen Account besitzt dann gehe zu <a href="/register/">Registration</a>.
+
+    
+
+{% endblock %}
