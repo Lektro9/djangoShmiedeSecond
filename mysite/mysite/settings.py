@@ -25,7 +25,7 @@ SECRET_KEY = 'b%)o)3fqcn6+%6=(=wa)39g1lfbf*y9z7j+%pwhnq_v#sodq$p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['0.0.0.0']
+ALLOWED_HOSTS = ['192.168.178.102']
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
