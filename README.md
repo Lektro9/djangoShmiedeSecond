@@ -1,7 +1,7 @@
 I use this for creating my website with jenkins.
 
 # How to install
-sudo apt-get install python3-pip
+sudo apt-get install python3-pip <br>
 sudo pip3 install virtualenv 
 virtualenv venv
 source venv/bin/activate
