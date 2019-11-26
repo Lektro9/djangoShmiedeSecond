@@ -25,7 +25,7 @@ SECRET_KEY = 'b%)o)3fqcn6+%6=(=wa)39g1lfbf*y9z7j+%pwhnq_v#sodq$p'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['192.168.178.102']
+ALLOWED_HOSTS = ['127.0.0.1']
 
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
@@ -54,8 +54,8 @@ TINYMCE_DEFAULT_CONFIG = {
     'contextmenu': 'formats | link image',
     'menubar': True,
     'statusbar': True,
-    }
-    
+}
+
 
 # Application definition
 

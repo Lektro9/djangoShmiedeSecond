@@ -4,6 +4,7 @@
 
 {% block body %}
 {% load static %}
+{% load index %}
 <style>
 		@media screen and (min-width: 600px) 
 		{
@@ -63,6 +64,23 @@
 				</div>
 
 				<hr>
+				{% if isKlausurSoon == True %}
+					<h1 class="display-4">Aktuelle Klausurthemen</h1>
+					{% for thema in klausurThemen %}
+						<div class="shadow p-3 mb-5 bg-white rounded">
+								<a href="{{thema.link}}">
+									<h4 class="display-5">{{thema.name}}</h4>
+								</a>
+								{% if kartenCount|index:forloop.counter0 != 0 %}
+								<a href="{{thema.link}}/karten">
+									<button type="button" class="btn btn-info">Flashkarten</button>
+								</a>
+								{% endif %}
+						</div>
+					{% endfor %}
+				{% endif %}
+
+
 				<h1 class="display-4">Neuste Einträge</h1>
 				{% for thema in neusteThemen %}
 					{% if thema.is_published == "ja" %}
