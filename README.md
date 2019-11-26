@@ -10,7 +10,7 @@ python3 mysite/manage.py runserver <br>
 
 if you do not have a database you can create one like this: <br>
 
-python3 manage.py syncdb <br>
+python3 manage.py migrate <br>
 
 create a superuser and you should be good to go <br>
 
