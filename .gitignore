@@ -8,7 +8,7 @@
 *.pyc
 __pycache__/
 local_settings.py
-#db.sqlite3
+db.sqlite3
 db.sqlite3-journal
 media
 
@@ -123,6 +123,6 @@ dmypy.json
 venv/
 
 # env files
-#mysite/.env.dev
-#mysite/.env.prod
+mysite/.env.dev
+mysite/.env.prod
 # End of https://www.gitignore.io/api/django
