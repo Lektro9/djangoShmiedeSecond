@@ -1,17 +1,17 @@
-I use this for creating builds of my website with jenkins.
+# Shmiede
+It's one of my first projects learning how to program and create websites. This was my second webframework to learn.
+The live version should be online and reachable under https://shmiede.de 
+## How to start everything
 
-# How to install
-sudo apt-get install python3-pip <br>
-sudo pip3 install virtualenv <br>
-virtualenv venv <br>
-source venv/bin/activate <br>
-pip3 install -r requirements.txt <br>
-python3 mysite/manage.py runserver <br>
+```bash
+cd djangoShmiedeSecond/mysite
+sudo docker-compose down -v
+sudo docker-compose -f docker-compose.prod.yml up -d --build
 
-if you do not have a database you can create one like this: <br>
+sudo docker-compose -f docker-compose.prod.yml exec web python manage.py migrate --noinput
 
-python3 manage.py migrate <br>
+sudo docker-compose -f docker-compose.prod.yml exec web python manage.py collectstatic --no-input --clear
 
-create a superuser and you should be good to go <br>
+sudo docker-compose logs -f
+```
 
-Otherwise message me.
