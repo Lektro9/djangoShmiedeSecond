@@ -25,11 +25,11 @@ class ThemaAdmin(admin.ModelAdmin):
     ]
     readonly_fields = ('goto_button', )
 
-    formfield_overrides = {
-        models.TextField: {'widget': TinyMCE(
-            mce_attrs={'valid_elements': '*[*]'},
-        )}
-    }
+    # formfield_overrides = {
+    #     models.TextField: {'widget': TinyMCE(
+    #         mce_attrs={'valid_elements': '*[*]'},
+    #     )}
+    # }
 
     list_display = (
         'name',

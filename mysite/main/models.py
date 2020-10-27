@@ -21,8 +21,7 @@ class Thema(models.Model):
     name = models.CharField(max_length=200)
     inhalt = models.TextField()
     datum = models.DateTimeField("Erstelldatum", default=timezone.now)
-    style = models.CharField(max_length=200, default="", blank=True)
-
+    style = models.CharField(max_length=25000, default="", blank=True)
     thema_fach = models.ForeignKey(
         Fach, default=1, verbose_name="dasfach", on_delete=models.SET_DEFAULT)
     author = models.ForeignKey(
